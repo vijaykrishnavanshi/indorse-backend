@@ -1,0 +1,31 @@
+{
+  "name": "indorse-backend",
+  "version": "1.0.0",
+  "description": "Serverless app to deploy multiple labmda functions for APIs",
+  "main": "handler.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijaykrishnavanshi/indorse-backend.git"
+  },
+  "keywords": [
+    "serverless",
+    "lambda",
+    "aws"
+  ],
+  "author": "Vijay Krishnavanshi",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/vijaykrishnavanshi/indorse-backend/issues"
+  },
+  "homepage": "https://github.com/vijaykrishnavanshi/indorse-backend#readme",
+  "devDependencies": {
+    "serverless-offline": "^3.27.0"
+  },
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "mongoose": "^5.3.3"
+  }
+}
