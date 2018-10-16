@@ -32,10 +32,6 @@ functions: # add 3 functions according to the specification
           path: create-profile # path will be domain.name.com/dev/notes
           method: post
           cors: true
-          request:
-            parameters:
-              querystrings: 
-                data: true 
 
   updateProfile:
     handler: handler.updateProfile
@@ -44,10 +40,6 @@ functions: # add 3 functions according to the specification
           path: update-profile # path will be domain.name.com/dev/notes/1
           method: post
           cors: true
-          request:
-            parameters:
-              querystrings: 
-                data: true 
 
   updateInterest:
     handler: handler.updateInterest # path will be domain.name.com/dev/notes
@@ -56,10 +48,6 @@ functions: # add 3 functions according to the specification
           path: update-interest
           method: post
           cors: true
-          request:
-            parameters:
-              querystrings: 
-                data: true 
 
 
 plugins:
