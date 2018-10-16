@@ -4,7 +4,8 @@
   "description": "Serverless app to deploy multiple labmda functions for APIs",
   "main": "handler.js",
   "scripts": {
-    "offline": "sls offline start --skipCacheInvalidation",
+    "offline": "./node_modules/serverless/bin/serverless offline start --skipCacheInvalidation",
+    "deploy": "./node_modules/serverless/bin/serverless deploy",
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "lint-fix": "./node_modules/eslint/bin/eslint.js . --fix",
     "test": "mocha --timeout 5000",
@@ -42,6 +43,7 @@
   "dependencies": {
     "dotenv": "^6.1.0",
     "mongoose": "^5.3.3",
-    "mongoose-auto-increment": "^5.0.1"
+    "mongoose-auto-increment": "^5.0.1",
+    "serverless": "^1.32.0"
   }
 }

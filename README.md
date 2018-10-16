@@ -28,6 +28,12 @@ npm run lint  # for cheking the lint error
 npm run lint-fix # for fixing the minor lint error
 ```
 
+## Run Tests
+
+```closure
+npm run test  # for running tests
+```
+
 ## Generate Documentation
 
 ```closure
