@@ -24,8 +24,15 @@ module.exports = async (event, context) => {
   };
   return User.findOne(criteria)
     .then(foundUser => {
-      const body = JSON.parse(event.body);
-      foundUser.interest = body.interest || foundUser.interest;
+      const body = JSON.parse(event.body); // fetch body and parse it
+      const interest = foundUser.interest || []; 
+      if (!body.remove) {
+        interest = interest.filter(elem => elem != body.interest);
+      } else {
+        interest = interest.filter(elem => elem != body.interest);
+        interest.push(body.interest.toLowerCase());
+      }
+      foundUser.interest = interest;
       return foundUser.save();
     })
     .then(savedUser => {
