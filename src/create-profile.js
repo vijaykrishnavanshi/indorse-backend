@@ -2,20 +2,28 @@
 const connectToDatabase = require('./lib/connectDB');
 const User = require("./lib/user");
 
-module.exports = (event, context, callback) => {
+module.exports = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false;
-
-  connectToDatabase()
-    .then(() => {
-      User.create(JSON.parse(event.body))
-        .then(user => callback(null, {
-          statusCode: 200,
-          body: JSON.stringify(user)
-        }))
-        .catch(err => callback(null, {
-          statusCode: err.statusCode || 500,
-          headers: { 'Content-Type': 'text/plain' },
-          body: 'Could not create the user.'
-        }));
+  const response = {
+    statusCode: 500,
+    body: ""
+  };
+  await connectToDatabase();
+  const body = JSON.parse(event.body);
+  if(body.user_id) delete body.user_id;
+  const user = new User(JSON.parse(event.body));
+  return user.save()
+    .then(savedUser => {
+      savedUser = savedUser.toObject();
+      response.statusCode = 200;
+      response.body = JSON.stringify(savedUser);
+      return response;    
+    })
+    .catch(error => {
+      console.log("Error:", error);
+      response.statusCode = error.statusCode || 500;
+      response.headers = { 'Content-Type': 'text/plain' };
+      response.body = 'Could not create the user.';
+      return response;
     });
 };

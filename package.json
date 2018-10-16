@@ -22,10 +22,13 @@
   },
   "homepage": "https://github.com/vijaykrishnavanshi/indorse-backend#readme",
   "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-plugin-node": "^7.0.1",
     "serverless-offline": "^3.27.0"
   },
   "dependencies": {
     "dotenv": "^6.1.0",
-    "mongoose": "^5.3.3"
+    "mongoose": "^5.3.3",
+    "mongoose-auto-increment": "^5.0.1"
   }
 }

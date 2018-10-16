@@ -18,6 +18,7 @@ module.exports = connectToDatabase = () => {
       console.log(dbURI);
       console.log("MongoDB Connected");
       isConnected = db.connections[0].readyState;
+      return isConnected;
     })
     .catch(error => {
       console.log("DB Error: ", error);

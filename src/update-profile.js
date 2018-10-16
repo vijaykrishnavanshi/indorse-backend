@@ -2,20 +2,47 @@
 const connectToDatabase = require('./lib/connectDB');
 const User = require("./lib/user");
 
-module.exports = (event, context, callback) => {
+module.exports = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false;
-
-  connectToDatabase()
-    .then(() => {
-      User.findById(event.pathParameters.id)
-        .then(user => callback(null, {
-          statusCode: 200,
-          body: JSON.stringify(user)
-        }))
-        .catch(error => callback(null, {
-          statusCode: error.statusCode || 500,
-          headers: { 'Content-Type': 'text/plain' },
-          body: 'Could not fetch the note.'
-        }));
+  const response = {
+    statusCode: 500,
+    body: ""
+  };
+  console.log("event: ", event.queryStringParameters);
+  const query = event.queryStringParameters;
+  console.log(query.email);
+  await connectToDatabase();
+  const criteria = {
+      $or: [
+        {
+            email: query.id
+        },
+        {
+            mobile_number: query.id
+        }
+      ]
+  };
+  return User.findOne(criteria)
+    .then(foundUser => {
+      const body = JSON.parse(event.body);
+      foundUser.mobile_number = body.mobile_number || foundUser.mobile_number;
+      foundUser.name = body.name || foundUser.name;
+      foundUser.address = body.address || foundUser.address;
+      foundUser.company = body.company || foundUser.company;
+      foundUser.title = body.title || foundUser.title;
+      return foundUser.save();
+    })
+    .then(savedUser => {
+      savedUser = savedUser.toObject();
+      console.log(savedUser);
+      response.statusCode = 200;
+      response.body = JSON.stringify(savedUser);
+      return response;    
+    })
+    .catch(error => {
+      response.statusCode = error.statusCode || 500;
+      response.headers = { 'Content-Type': 'text/plain' };
+      response.body = 'Could not create the user.';
+      return response;
     });
 };
