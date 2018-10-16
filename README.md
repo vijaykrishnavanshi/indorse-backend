@@ -75,4 +75,4 @@ For Deployed Version: [https://www.getpostman.com/collections/4e63dc0d46edea1867
 
 ## Documentation
 
-Docs reside in ./docs folder. You can either host them or view them in your browser.
+Docs reside in ./docs folder. You can either host them or view index.html in your browser.
