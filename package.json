@@ -4,6 +4,9 @@
   "description": "Serverless app to deploy multiple labmda functions for APIs",
   "main": "handler.js",
   "scripts": {
+    "offline": "sls offline start --skipCacheInvalidation",
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "lint-fix": "./node_modules/eslint/bin/eslint.js . --fix",
     "test": "jest"
   },
   "repository": {

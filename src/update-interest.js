@@ -23,9 +23,10 @@ module.exports = async (event, context) => {
     ]
   };
   return User.findOne(criteria)
+    .exec()
     .then(foundUser => {
       const body = JSON.parse(event.body); // fetch body and parse it
-      const interest = foundUser.interest || []; 
+      const interest = foundUser.interest || [];
       if (!body.remove) {
         interest = interest.filter(elem => elem != body.interest);
       } else {
