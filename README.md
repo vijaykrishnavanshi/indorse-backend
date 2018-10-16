@@ -38,3 +38,25 @@ npm run lint-fix # for fixing the minor lint error
 - [X] Use async/await calls in the Node JS functions
 - [X] Add relevant code comments and modularise the code properly. Create more than one Lambda wherever required and make inter Lambda calls if required
 - [X] Write an automated test for this lambda
+
+## Deployed Information
+
+``` closure
+Service Information
+service: indorse-backend
+stage: dev
+region: us-east-1
+stack: indorse-backend-dev
+api keys:
+  None
+endpoints:
+  GET - https://m0mlmbw42g.execute-api.us-east-1.amazonaws.com/dev/get
+  POST - https://m0mlmbw42g.execute-api.us-east-1.amazonaws.com/dev/create-profile
+  POST - https://m0mlmbw42g.execute-api.us-east-1.amazonaws.com/dev/update-profile
+  POST - https://m0mlmbw42g.execute-api.us-east-1.amazonaws.com/dev/update-interest
+functions:
+  get: indorse-backend-dev-get
+  createProfile: indorse-backend-dev-createProfile
+  updateProfile: indorse-backend-dev-updateProfile
+  updateInterest: indorse-backend-dev-updateInterest
+```
