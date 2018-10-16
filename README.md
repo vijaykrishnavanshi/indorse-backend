@@ -35,6 +35,6 @@ npm run lint-fix # for fixing the minor lint error
 - [X] Lambda to update user interests  including sports, food, media and more. Come up with relevant fields that can be added to user profile and add the same as parameter for the function
 - [X] All data should go to AWS Dynamo DB / Mongo Cloud Hosted Server
 - [ ] Configure AWS API gateway and create relevant APIs for create and update user records. Configure security for the API and configure rate limiting for the APIs
-- [ ] Use async/await calls in the Node JS functions
-- [ ] Add relevant code comments and modularise the code properly. Create more than one Lambda wherever required and make inter Lambda calls if required
+- [X] Use async/await calls in the Node JS functions
+- [X] Add relevant code comments and modularise the code properly. Create more than one Lambda wherever required and make inter Lambda calls if required
 - [ ] Write an automated test for this lambda
