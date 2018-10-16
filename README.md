@@ -28,6 +28,12 @@ npm run lint  # for cheking the lint error
 npm run lint-fix # for fixing the minor lint error
 ```
 
+## Generate Documentation
+
+```closure
+npm run generate-docs  # for generating documentation
+```
+
 ## Basic Feature
 
 - [X] Lambda to create user profile. User profile will include user_id, name, email, mobile number, address, company, title
