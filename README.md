@@ -30,11 +30,15 @@ npm run lint-fix # for fixing the minor lint error
 
 ## Run Tests
 
+Used [Mocha](https://mochajs.org/)
+
 ```closure
 npm run test  # for running tests
 ```
 
 ## Generate Documentation
+
+Used [API Docs](http://apidocjs.com/)
 
 ```closure
 npm run generate-docs  # for generating documentation
