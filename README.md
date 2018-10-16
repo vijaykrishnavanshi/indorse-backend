@@ -60,3 +60,9 @@ functions:
   updateProfile: indorse-backend-dev-updateProfile
   updateInterest: indorse-backend-dev-updateInterest
 ```
+
+## Postman Collections
+
+For Localhost: [https://www.getpostman.com/collections/d68d6ba1212d8d1c5c05](https://www.getpostman.com/collections/d68d6ba1212d8d1c5c05)
+
+For Deployed Version: [https://www.getpostman.com/collections/4e63dc0d46edea1867f3](https://www.getpostman.com/collections/4e63dc0d46edea1867f3)
