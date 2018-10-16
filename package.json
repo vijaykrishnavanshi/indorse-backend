@@ -21,9 +21,16 @@
     "url": "https://github.com/vijaykrishnavanshi/indorse-backend/issues"
   },
   "homepage": "https://github.com/vijaykrishnavanshi/indorse-backend#readme",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "devDependencies": {
     "eslint": "^5.7.0",
+    "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-security": "^1.4.0",
+    "prettier": "^1.14.3",
     "serverless-offline": "^3.27.0"
   },
   "dependencies": {

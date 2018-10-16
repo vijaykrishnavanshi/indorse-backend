@@ -1,19 +1,22 @@
 const dotenv = require("dotenv");
 dotenv.config();
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 let isConnected;
 
 // Build the connection string
-const dbURI = process.env.MONGOURI || "mongodb://indorse:indorse123@ds133113.mlab.com:33113/indorse";
+const dbURI =
+  process.env.MONGOURI ||
+  "mongodb://indorse:indorse123@ds133113.mlab.com:33113/indorse";
 
 // Create the database connection
-module.exports = connectToDatabase = () => {
+module.exports = () => {
   if (isConnected) {
     return Promise.resolve();
   }
-  
-  return mongoose.connect(dbURI)
+
+  return mongoose
+    .connect(dbURI)
     .then(db => {
       console.log(dbURI);
       console.log("MongoDB Connected");

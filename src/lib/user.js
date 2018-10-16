@@ -1,10 +1,12 @@
-const mongoose = require('mongoose');
-const autoIncrement = require('mongoose-auto-increment');
-const dbURI = process.env.MONGOURI || "mongodb://indorse:indorse123@ds133113.mlab.com:33113/indorse";
+const mongoose = require("mongoose");
+const autoIncrement = require("mongoose-auto-increment");
+const dbURI =
+  process.env.MONGOURI ||
+  "mongodb://indorse:indorse123@ds133113.mlab.com:33113/indorse";
 const connection = mongoose.createConnection(dbURI);
 autoIncrement.initialize(connection);
 
-const UserSchema = new mongoose.Schema({  
+const UserSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
   mobile_number: { type: String },
@@ -16,4 +18,4 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.plugin(autoIncrement.plugin, { model: "User", field: "user_id" });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model("User", UserSchema);
