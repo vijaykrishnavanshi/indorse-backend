@@ -29,9 +29,13 @@ module.exports = async (event, context) => {
       console.log("body: ", body);
       let interest = foundUser.interest || [];
       if (body.remove) {
-        interest = interest.filter(elem => elem.toLowerCase() != body.interest.toLowerCase());
+        interest = interest.filter(
+          elem => elem.toLowerCase() != body.interest.toLowerCase()
+        );
       } else {
-        interest = interest.filter(elem => elem.toLowerCase() != body.interest.toLowerCase());
+        interest = interest.filter(
+          elem => elem.toLowerCase() != body.interest.toLowerCase()
+        );
         interest.push(body.interest.toLowerCase());
       }
       foundUser.interest = interest;

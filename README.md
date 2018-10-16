@@ -37,4 +37,4 @@ npm run lint-fix # for fixing the minor lint error
 - [X] Configure AWS API gateway and create relevant APIs for create and update user records. Configure security for the API and configure rate limiting for the APIs
 - [X] Use async/await calls in the Node JS functions
 - [X] Add relevant code comments and modularise the code properly. Create more than one Lambda wherever required and make inter Lambda calls if required
-- [ ] Write an automated test for this lambda
+- [X] Write an automated test for this lambda

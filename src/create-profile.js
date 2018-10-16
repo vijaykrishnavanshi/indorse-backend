@@ -9,6 +9,7 @@ module.exports = async (event, context) => {
     body: ""
   };
   await connectToDatabase();
+  console.log("event: ", event);
   const body = JSON.parse(event.body);
   if (body.user_id) delete body.user_id;
   const user = new User(JSON.parse(event.body));
