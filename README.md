@@ -82,3 +82,5 @@ For Deployed Version: [https://www.getpostman.com/collections/4e63dc0d46edea1867
 ## Documentation
 
 Docs reside in ./docs folder. You can either host them or view index.html in your browser.
+
+Note: For running the npm run deploy command you need initialise serverless with the proper credentials of user with access to lambda, api_gateway, IAM and cloudfront.
