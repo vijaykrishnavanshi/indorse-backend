@@ -7,7 +7,8 @@
     "offline": "sls offline start --skipCacheInvalidation",
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "lint-fix": "./node_modules/eslint/bin/eslint.js . --fix",
-    "test": "mocha --timeout 5000"
+    "test": "mocha --timeout 5000",
+    "generate-docs": "./node_modules/apidoc/bin/apidoc -i ./src -o docs/"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "node": ">=8.0.0"
   },
   "devDependencies": {
+    "apidoc": "^0.17.6",
     "eslint": "^5.7.0",
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-node": "^7.0.1",
