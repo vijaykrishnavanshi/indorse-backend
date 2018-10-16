@@ -72,3 +72,7 @@ functions:
 For Localhost: [https://www.getpostman.com/collections/d68d6ba1212d8d1c5c05](https://www.getpostman.com/collections/d68d6ba1212d8d1c5c05)
 
 For Deployed Version: [https://www.getpostman.com/collections/4e63dc0d46edea1867f3](https://www.getpostman.com/collections/4e63dc0d46edea1867f3)
+
+## Documentation
+
+Docs reside in ./docs folder. You can either host them or view them in your browser.
