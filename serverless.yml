@@ -41,7 +41,7 @@ functions: # add 3 functions according to the specification
     handler: handler.updateProfile
     events:
       - http:
-          path: update-profile/{id} # path will be domain.name.com/dev/notes/1
+          path: update-profile # path will be domain.name.com/dev/notes/1
           method: post
           cors: true
           request:
@@ -53,7 +53,7 @@ functions: # add 3 functions according to the specification
     handler: handler.updateInterest # path will be domain.name.com/dev/notes
     events:
      - http:
-          path: update-interest/{id}
+          path: update-interest
           method: post
           cors: true
           request:

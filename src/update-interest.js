@@ -26,11 +26,12 @@ module.exports = async (event, context) => {
     .exec()
     .then(foundUser => {
       const body = JSON.parse(event.body); // fetch body and parse it
-      const interest = foundUser.interest || [];
-      if (!body.remove) {
-        interest = interest.filter(elem => elem != body.interest);
+      console.log("body: ", body);
+      let interest = foundUser.interest || [];
+      if (body.remove) {
+        interest = interest.filter(elem => elem.toLowerCase() != body.interest.toLowerCase());
       } else {
-        interest = interest.filter(elem => elem != body.interest);
+        interest = interest.filter(elem => elem.toLowerCase() != body.interest.toLowerCase());
         interest.push(body.interest.toLowerCase());
       }
       foundUser.interest = interest;

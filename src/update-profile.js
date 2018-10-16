@@ -10,7 +10,6 @@ module.exports = async (event, context) => {
   };
   console.log("event: ", event.queryStringParameters);
   const query = event.queryStringParameters;
-  console.log(query.email);
   await connectToDatabase();
   const criteria = {
     $or: [
